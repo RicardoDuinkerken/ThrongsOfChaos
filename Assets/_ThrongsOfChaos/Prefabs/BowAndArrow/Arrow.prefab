@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6049256216759792296}
   - component: {fileID: 5620928875848021545}
-  - component: {fileID: 5882092333624628350}
+  - component: {fileID: 3990339855927707233}
   - component: {fileID: 6022775653736472489}
-  m_Layer: 0
+  - component: {fileID: 3790136427887205692}
+  m_Layer: 2
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,28 +156,30 @@ MonoBehaviour:
     m_RotationOrder: 4
   m_ThrowVelocityScale: 1.5
   m_ThrowAngularVelocityScale: 0.25
-  m_ForceGravityOnDetach: 0
+  m_ForceGravityOnDetach: 1
   m_RetainTransformParent: 0
   m_AttachPointCompatibilityMode: 0
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   speed: 1500
-  capsuleCollider: {fileID: 5882092333624628350}
---- !u!136 &5882092333624628350
-CapsuleCollider:
+  capsuleCollider: {fileID: 3790136427887205692}
+--- !u!114 &3990339855927707233
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201513761433071020}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.01699567
-  m_Height: 0.8
-  m_Direction: 1
-  m_Center: {x: 0.004637705, y: 0, z: -0.0002289713}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 363f51beb97f0754197a38eb576a3f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tip: {fileID: 8342402735744733270}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 115
 --- !u!54 &6022775653736472489
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -193,6 +196,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &3790136427887205692
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201513761433071020}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.01699567
+  m_Height: 0.8
+  m_Direction: 2
+  m_Center: {x: 0.004637705, y: 0, z: -0.0002289713}
 --- !u!1 &1951042793697885298
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4120881756025969276}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1951042793697885298}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.425}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -235,7 +252,7 @@ GameObject:
   - component: {fileID: 2286993577402051844}
   - component: {fileID: 8856083258637809304}
   - component: {fileID: 3129259322408340130}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Shaft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +333,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5742991929457185523}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +368,7 @@ GameObject:
   - component: {fileID: 8342402735744733270}
   - component: {fileID: 2687756974870964556}
   - component: {fileID: 3683701476682205612}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
