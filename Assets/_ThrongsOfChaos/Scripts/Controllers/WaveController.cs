@@ -31,7 +31,7 @@ public class WaveController : MonoBehaviour
         }
     }
     
-    private void Awake()
+    private void Start()
     {
         GameController.instance.OnGameStart += StartWaves;
         GameController.instance.OnRoundStart += NextWave;
