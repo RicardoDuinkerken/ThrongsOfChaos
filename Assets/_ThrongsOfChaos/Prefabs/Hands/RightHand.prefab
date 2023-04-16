@@ -940,8 +940,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionAsset: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   controllerName: XRI RightHand Interaction
-  actionNameTrigger: Activate
-  actionNameGrip: Select
+  actionNameTrigger: Activate Value
+  actionNameGrip: Select Value
 --- !u!1 &8126380730461577384
 GameObject:
   m_ObjectHideFlags: 0
