@@ -17,9 +17,9 @@ public class CrystalController : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             //enemy should die
-            //other.GetComponent(Enemy).GoalReached;
+            other.GetComponent<Enemy>().GoalReached();
             
-            GameController.instance.CrystalDamaged(1);
+            //GameController.instance.CrystalDamaged(1);
         }
     }
     

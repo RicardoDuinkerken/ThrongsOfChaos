@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour
     public event Action OnGameStart;
     public event Action onGameRestart;
     public event Action OnGameEnd;
+    public event Action<int> OnRoundStart;
     public event Action<int> OnCrystalDamaged;
     public event Action OnCrystalDestroyed;
     
@@ -43,11 +44,12 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        
+        GameStart();
     }
 
     private void GameStart()
     {
+        Debug.Log("Game Start");
         _currentCrystalHealth = crystalHealth;
         OnGameStart?.Invoke();
     }
@@ -59,6 +61,11 @@ public class GameController : MonoBehaviour
     {
         OnGameEnd?.Invoke();
     }
+    
+    public void StartRound(int roundNr)
+    {
+        OnRoundStart?.Invoke(roundNr);
+    }
 
     public void CrystalDamaged(int damage)
     {
@@ -69,6 +76,5 @@ public class GameController : MonoBehaviour
         }
         OnCrystalDamaged?.Invoke(damage);
     }
-
-
+    
 }
