@@ -611,8 +611,8 @@ GameObject:
   - component: {fileID: 8702601937291919427}
   - component: {fileID: 8296642820543825915}
   - component: {fileID: 4939983640020575096}
-  - component: {fileID: 7251653728010989397}
   - component: {fileID: 4198744536189074171}
+  - component: {fileID: -3717935132862897968}
   m_Layer: 0
   m_Name: Enemy_Goblin
   m_TagString: Enemy
@@ -652,6 +652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navmesh: {fileID: 8296642820543825915}
   anim: {fileID: 4939983640020575096}
+  forceAmount: 0
   _target: {fileID: 0}
 --- !u!195 &8296642820543825915
 NavMeshAgent:
@@ -663,7 +664,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.2
-  m_Speed: 1.5
+  m_Speed: 1
   m_Acceleration: 4
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -695,20 +696,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!136 &7251653728010989397
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2753921173796054138}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!54 &4198744536189074171
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -725,6 +712,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!136 &-3717935132862897968
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2753921173796054138}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!1 &2816090961277805439
 GameObject:
   m_ObjectHideFlags: 0

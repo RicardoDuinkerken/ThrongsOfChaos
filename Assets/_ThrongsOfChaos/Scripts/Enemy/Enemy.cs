@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IArrowHittable
 {
     //serialized
     [SerializeField] private NavMeshAgent navmesh;
     [SerializeField] private Animator anim;
+    [SerializeField] private float forceAmount;
 
     private bool _isDead = false;
+    private bool _isMoving = false;
     
     //public
     public event Action OnDeath;
@@ -52,8 +54,16 @@ public class Enemy : MonoBehaviour
     {
         if (!_isDead)
         {
-            anim.SetBool("IsMoving", true);
-            anim.SetFloat("MoveSpeed", navmesh.velocity.magnitude / navmesh.speed);
+            if (!_isMoving)
+            {
+                _isMoving = true;
+                anim.SetBool("IsMoving", _isMoving);
+            }
+
+            if (_isMoving)
+            {
+                anim.SetFloat("MoveSpeed", navmesh.velocity.magnitude / navmesh.speed);
+            }
         }
     }
 
@@ -65,10 +75,28 @@ public class Enemy : MonoBehaviour
         Destroy(transform.gameObject);
     }
 
-    public void Die()
+    public IEnumerator Die()
     {
         //Debug.Log("dying");
         OnDeath?.Invoke();
+        
+        _isDead = true;
+        _isMoving = false;
+        anim.SetBool("Death", _isDead);
+        yield return new WaitForSeconds(1f);
         Destroy(transform.gameObject);
+    }
+
+    public void Hit(Arrow arrow)
+    {
+        navmesh.enabled = false;
+        Destroy(arrow.gameObject);
+        StartCoroutine(Die());
+    }
+    
+    private void DisableCollider(Arrow arrow)
+    {
+        if (arrow.TryGetComponent(out Collider collider))
+            collider.enabled = false;
     }
 }
